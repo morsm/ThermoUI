@@ -1,0 +1,18 @@
+{
+  "name": "thermoui",
+  "version": "1.0.0",
+  "description": "User interface for Hippotronics thermostat",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Maarten ter Mors",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1"
+  }
+}

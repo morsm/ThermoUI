@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Hippotronics thermostat</title>
+        <link rel="stylesheet" href="default.css"/>
+        <script language="JavaScript" src="jquery.js"></script>
+        <script language="JavaScript" src="index_codebehind.js"></script>
+    </head>
+
+    <body onload="transferState()">
+        <span class="invisible" id="stateObject"><%= JSON.stringify(state) %></span>
+        <div class="bordered fullWidth" id="divData" width="400" height="256">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="bigTemp">Set</td>
+                        <td class="bigTemp right">
+                            <span id="targetTemp"><%=
+                                state.TargetTemperature.value.toFixed(1)
+                            %></span>
+                            &deg;
+                            <span id="targetTempScale"><%=
+                                state.TargetTemperature.scale.substring(0,1)
+                            %></span>
+                        </td>
+                        <td class="tempButtonCell"><button class="tempButton" onclick="changeTemperature(0.5)">+</button></td>
+                        <td class="flameCell" rowspan="2"><img class="<%= state.HeatingOn ? "visible" : "invisible"%>"" id="heatingOn" src="flame.svg"/></td>
+                    </tr>
+                    <tr>
+                        <td class="mediumTemp">Room</td>
+                        <td class="mediumTemp right">
+                            <span id="roomTemp"><%=
+                                state.RoomTemperature.value.toFixed(1)
+                            %></span>
+                            &deg;
+                            <span id="roomTempScale"><%=
+                                state.RoomTemperature.scale.substring(0,1)
+                            %></span>
+                        </td>
+                        <td class="tempButtonCell"><button class="tempButton" onclick="changeTemperature(-0.5)">-</button></td>
+                    </tr>
+                    <tr>
+                        <td class="mediumTemp">Humidity</td>
+                        <td class="mediumTemp right">
+                            <span id="roomHum"><%=
+                                state.RelativeHumidity
+                            %></span>
+                            &percnt;
+                        </td>
+                    </tr>
+            </tbody>
+            </table>
+
+        </div>
+
+        <div class="frame floatBottom floatRight" id="divBui">
+            <iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.37403&lng=4.88969&overname=2&zoom=11&naam=1069&size=2b&voor=1" 
+            scrolling="no" width="330" height="330" frameborder="no"></iframe>
+        </div>
+
+        <div class="frame floatBottom" id="divWindy">
+            <iframe width="650" height="330" src="https://embed.windy.com/embed2.html?lat=51.529&lon=5.065&zoom=8&level=surface&overlay=wind&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=true&detailLat=52.359&detailLon=4.793&metricWind=bft&metricTemp=%C2%B0C&radarRange=-1" 
+            frameborder="0"></iframe>
+        </div>
+
+    </body>
+</html>

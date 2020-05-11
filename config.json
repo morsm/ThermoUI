@@ -1,0 +1,5 @@
+{
+    "thermoDaemonHost": "http://192.168.1.8:9002/webapi/",
+    "stateUri": "state",
+    "tempUri": "targettemp"
+}
