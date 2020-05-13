@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    touch-action: manipulation;
+}
+body {
+    background-color: darkslateblue;
+    color: lightblue;
+    font-family: AvenirNext-Bold;
+}
+.bordered {
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 4px;
+    border-radius: 16px;
+}
+.tempButton {
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 2px;
+    border-radius: 8px;
+    background-color: darkslateblue;
+    color: lightblue;
+    font-family: AvenirNext-Bold;
+    font-size: 40pt;
+    width: 80pt;
+    text-align: center;
+}
+.tempButtonCell {
+    padding-left: 10pt;
+}
+.flameCell {
+    padding-left: 10pt;
+    width: 120pt;
+}
+.bigTemp {
+    font-size: 40pt;
+}
+.mediumTemp {
+    font-size: 25pt;
+}
+.right
+{
+    text-align: right;
+}
+.fullWidth
+{
+    position: absolute;
+    width: 98%;
+}
+.floatRight
+{
+    right: 0px;
+}
+.floatBottom
+{
+    position: absolute;
+    bottom: 0px;
+}
+.invisible
+{
+    visibility: hidden;
+}
+.visible
+{
+    visibility: visible;
+}
