@@ -6,7 +6,7 @@
         <script language="JavaScript" src="index_codebehind.js"></script>
     </head>
 
-    <body onload="transferState()">
+    <body onload="initialize()">
         <span class="invisible" id="stateObject"><%= JSON.stringify(state) %></span>
         <div class="bordered fullWidth" id="divData" width="400" height="256">
             <table>
@@ -54,12 +54,12 @@
 
         <div class="frame floatBottom floatRight" id="divBui">
             <iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.37403&lng=4.88969&overname=2&zoom=11&naam=1069&size=2b&voor=1" 
-            scrolling="no" width="330" height="330" frameborder="no"></iframe>
+            scrolling="no" width="330" height="330" frameborder="no" id="frameBui"></iframe>
         </div>
 
         <div class="frame floatBottom" id="divWindy">
             <iframe width="650" height="330" src="https://embed.windy.com/embed2.html?lat=51.529&lon=5.065&zoom=8&level=surface&overlay=wind&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=true&detailLat=52.359&detailLon=4.793&metricWind=bft&metricTemp=%C2%B0C&radarRange=-1" 
-            frameborder="0"></iframe>
+            frameborder="0" id="frameWindy"></iframe>
         </div>
 
     </body>

@@ -1,4 +1,6 @@
 var ThermostatState = null;
+var FRAME_REFRESH_TIMEOUT = 600000;  // 10 minutes
+
 
 function transferState()
 {
@@ -79,4 +81,22 @@ function scheduleUpdate()
     .fail(function(xhr, status, errorThrown) {
         scheduleUpdate();
     });
+}
+
+function refreshiFrame(frameName)
+{
+    var iframe = document.getElementById(frameName);
+    iframe.src = iframe.src + "";
+}
+
+function scheduleRefreshes()
+{
+    setInterval('refreshiFrame("frameBui")', FRAME_REFRESH_TIMEOUT);
+    setInterval('refreshiFrame("frameWindy")', FRAME_REFRESH_TIMEOUT);
+}
+
+function initialize()
+{
+    scheduleRefreshes();
+    transferState();
 }
